@@ -1,0 +1,647 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Requirements and User Story Handbook</title>
+  <meta name="description" content="A friendly handbook for analysts on writing requirements and user stories." />
+  <link rel="stylesheet" href="colors_and_type.css" />
+  <link rel="stylesheet" href="handbook-styles.css" />
+</head>
+<body>
+  <div id="root">
+    <div class="app">
+      <button class="theme-toggle" id="theme-toggle" title="Switch to dark mode" aria-label="Toggle theme"></button>
+
+      <aside class="sidebar">
+        <a href="#start" class="brand" data-go="start">
+          <div class="brand-mark">H</div>
+          <div class="brand-text">
+            <div class="brand-title">Requirements &amp; User Story Handbook</div>
+            <div class="brand-sub">For Analysts</div>
+          </div>
+        </a>
+
+        <div class="nav-group">
+          <div class="nav-label">Start here</div>
+          <button class="nav-link" data-go="start"><span class="nav-num">01</span><span>Welcome</span></button>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-label">Requirements</div>
+          <button class="nav-link" data-go="reqs"><span class="nav-num">02</span><span>Requirements 101</span></button>
+          <button class="nav-link" data-go="smart"><span class="nav-num">03</span><span>SMART &amp; the Top 10</span></button>
+          <button class="nav-link" data-go="verbs"><span class="nav-num">04</span><span>Verbs to use (and avoid)</span></button>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-label">User stories</div>
+          <button class="nav-link" data-go="anatomy"><span class="nav-num">05</span><span>Anatomy of a story</span></button>
+          <button class="nav-link" data-go="lifecycle"><span class="nav-num">06</span><span>Life of a story</span></button>
+          <button class="nav-link" data-go="tips"><span class="nav-num">07</span><span>Writing tips</span></button>
+          <button class="nav-link" data-go="invest"><span class="nav-num">08</span><span>The INVEST check</span></button>
+          <button class="nav-link" data-go="ac"><span class="nav-num">09</span><span>Acceptance criteria</span></button>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-label">Refining</div>
+          <button class="nav-link" data-go="splitting"><span class="nav-num">10</span><span>Splitting &amp; mapping</span></button>
+          <button class="nav-link" data-go="questions"><span class="nav-num">11</span><span>Finding hidden stories</span></button>
+        </div>
+
+        <div class="nav-group">
+          <div class="nav-label">Reference</div>
+          <button class="nav-link" data-go="glossary"><span class="nav-num">12</span><span>Glossary</span></button>
+        </div>
+      </aside>
+
+      <main class="main">
+
+        <!-- ============ START ============ -->
+        <section class="page" id="page-start" data-id="start">
+          <div class="eyebrow">Start here</div>
+          <h1 class="page-title">A friendly handbook for requirements and user stories.</h1>
+          <p class="lede">
+            Good software starts with two things written down well: a clear <strong>requirement</strong> that says what we're building and why, and a clear <strong>user story</strong> that says who it's for and what value they get. This handbook is a working companion for the analysts who write both.
+          </p>
+
+          <h2 class="section-h">Two halves of the same job</h2>
+          <p>
+            Requirements and user stories aren't competing formats — they're different altitudes of the same conversation. Requirements live higher up: business goals, system behaviors, the qualities the solution must hold. User stories live closer to the ground: one specific user, doing one specific thing, getting one specific benefit. You'll move between them constantly.
+          </p>
+
+          <div class="two-up">
+            <div class="step-card">
+              <div class="step-num">REQUIREMENTS</div>
+              <div class="step-name">What &amp; why</div>
+              <div class="step-desc">Define the problem, capture the conditions the solution must meet, get sign-off from stakeholders. Higher-level, longer-lived.</div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">USER STORIES</div>
+              <div class="step-name">Who &amp; what value</div>
+              <div class="step-desc">Translate requirements into small, shippable slices of user value. Lower-level, refined sprint to sprint.</div>
+            </div>
+          </div>
+
+          <h2 class="section-h">Writing requirements, in one paragraph</h2>
+          <p>
+            A good requirement names a specific capability the system must have, written so anyone can test whether it's been met. Stay focused on <strong>what</strong>, not <strong>how</strong>. Be specific, measurable, and traceable back to a real stakeholder. Use concrete verbs (<em>create, validate, notify</em>) and avoid vague ones (<em>manage, process, enhance</em>). And remember: a requirement is a promise to deliver something — every sentence should be one someone could sign off on.
+          </p>
+
+          <blockquote class="pull">
+            Requirements describe the system. Stories describe the person using it. You need both, and they should agree.
+          </blockquote>
+
+          <h2 class="section-h">What's in here</h2>
+          <p>
+            Twelve short sections. We start with requirements fundamentals, then move into the day-to-day craft of user stories — writing them, checking them with INVEST, splitting them, and pulling out the hidden ones. A glossary at the end covers every term we use.
+          </p>
+
+          <div class="two-up">
+            <div class="accordion open">
+              <button class="accordion-head" aria-expanded="true"><span>If you're brand new</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+              <div class="accordion-body"><p>Read <strong>Requirements 101</strong> first to get the vocabulary, then jump to <strong>Anatomy of a story</strong> and <strong>Writing tips</strong>. That trio gives you what you need to write your first story today.</p></div>
+            </div>
+            <div class="accordion">
+              <button class="accordion-head" aria-expanded="false"><span>If you've done this before</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+              <div class="accordion-body"><p>Use the sidebar as a checklist. The <strong>SMART &amp; Top 10</strong>, <strong>INVEST</strong>, and <strong>verbs to use</strong> pages are the bits people forget once they've stopped feeling like a beginner.</p></div>
+            </div>
+          </div>
+
+          <div class="callout">
+            <div class="callout-title">Mindset</div>
+            <div>A requirement is a promise to deliver. A user story is a promise to have a conversation. Both are documents — but neither is the work itself. The work is the conversations they unlock.</div>
+          </div>
+        </section>
+
+        <!-- ============ REQS ============ -->
+        <section class="page" id="page-reqs" data-id="reqs">
+          <div class="eyebrow">Requirements</div>
+          <h1 class="page-title">Requirements 101</h1>
+          <p class="lede">
+            A user story is one kind of requirement, but it sits inside a wider family. Knowing the family helps you write better stories — and helps you escalate when a story is really hiding a business-level problem.
+          </p>
+
+          <h2 class="section-h">The 4D process</h2>
+          <div class="steps-row">
+            <div class="step-card">
+              <div class="step-num">1 · DEFINE</div>
+              <div class="step-name">Frame the problem</div>
+              <div class="step-desc">Situation, problem, objectives, scope, benefits, stakeholders. Nail these before anyone starts writing stories.</div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">2 · DISCOVER</div>
+              <div class="step-name">Elicit requirements</div>
+              <div class="step-desc">Interviews, workshops, observation, surveys, prototypes. Multiple techniques because no single one is enough.</div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">3 · DOCUMENT</div>
+              <div class="step-name">Rewrite, review, revise, repeat</div>
+              <div class="step-desc">First drafts are wrong; that's fine. Run them through the Top 10 checklist and iterate until they hold up.</div>
+            </div>
+            <div class="step-card">
+              <div class="step-num">4 · DELIVER</div>
+              <div class="step-name">Inspect &amp; sign off</div>
+              <div class="step-desc">Explicit acceptance from each impacted stakeholder. No tacit approvals — they unravel later.</div>
+            </div>
+          </div>
+
+          <h2 class="section-h">Kinds of requirement</h2>
+          <p>You'll hear all of these. They aren't interchangeable.</p>
+
+          <dl>
+            <div class="def">
+              <dt>Requirement</dt>
+              <dd>A condition or capability needed by a stakeholder to solve a problem or achieve an objective. Must be measurable, bounded by constraints, and met by the solution.</dd>
+            </div>
+            <div class="def">
+              <dt>Business Case</dt>
+              <dd>The justification for the project — value added, presented to management for a go/no-go decision. Usually contains an executive summary, current situation, problem statement, objectives, scope, benefits, and stakeholders.</dd>
+            </div>
+            <div class="def">
+              <dt>Business Requirements</dt>
+              <dd>High-level statements of the goals, objectives, or needs of the enterprise. The "why we're doing this at all" layer.</dd>
+            </div>
+            <div class="def">
+              <dt>Stakeholder Requirements</dt>
+              <dd>The needs of a particular stakeholder or class of stakeholders, and how that stakeholder will interact with the solution.</dd>
+            </div>
+            <div class="def">
+              <dt>Functional Requirements</dt>
+              <dd>What the system actually does — the behaviors, operations, and information it manages. Most user stories live here.</dd>
+            </div>
+            <div class="def">
+              <dt>Non-Functional Requirements</dt>
+              <dd>The qualities and conditions under which the solution must remain effective — performance, security, accessibility, reliability. Also called supplementary or quality requirements.</dd>
+            </div>
+          </dl>
+        </section>
+
+        <!-- ============ SMART ============ -->
+        <section class="page" id="page-smart" data-id="smart">
+          <div class="eyebrow">Requirements</div>
+          <h1 class="page-title">SMART &amp; the Top 10</h1>
+          <p class="lede">
+            Two compact checklists. SMART is for individual requirements. The Top 10 is for the document as a whole. Run both before sign-off and most rework disappears.
+          </p>
+
+          <h2 class="section-h">SMART requirements</h2>
+          <div class="smart-grid">
+            <div class="smart-card"><div class="letter-big">S</div><div class="smart-name">Specific</div><div class="smart-desc">Wording is clear, concise, and unambiguous.</div></div>
+            <div class="smart-card"><div class="letter-big">M</div><div class="smart-name">Measurable</div><div class="smart-desc">There are criteria that can be tested.</div></div>
+            <div class="smart-card"><div class="letter-big">A</div><div class="smart-name">Achievable</div><div class="smart-desc">It can be successfully done given the project environment.</div></div>
+            <div class="smart-card"><div class="letter-big">R</div><div class="smart-name">Realistic</div><div class="smart-desc">It fits the project scope and available resources.</div></div>
+            <div class="smart-card"><div class="letter-big">T</div><div class="smart-name">Traceable</div><div class="smart-desc">It can be linked to a stakeholder, process, system, or model.</div></div>
+          </div>
+
+          <h2 class="section-h">The Top 10 checklist</h2>
+          <p>Run every requirement against these. If it fails any one, rewrite.</p>
+
+          <ol class="top10">
+            <li><span class="n">1</span>Necessary</li>
+            <li><span class="n">2</span>In scope</li>
+            <li><span class="n">3</span>Specific</li>
+            <li><span class="n">4</span>Measurable</li>
+            <li><span class="n">5</span>Achievable</li>
+            <li><span class="n">6</span>Realistic</li>
+            <li><span class="n">7</span>Traceable</li>
+            <li><span class="n">8</span>Grammatically correct</li>
+            <li><span class="n">9</span>Identified and organized</li>
+            <li><span class="n">10</span>WHAT not HOW</li>
+          </ol>
+
+          <div class="callout">
+            <div class="callout-title">The most important one</div>
+            <div><strong>WHAT not HOW.</strong> A requirement says what the system must do; a design says how it'll do it. Mixing them up is the single most common requirements mistake.</div>
+          </div>
+        </section>
+
+        <!-- ============ VERBS ============ -->
+        <section class="page" id="page-verbs" data-id="verbs">
+          <div class="eyebrow">Requirements</div>
+          <h1 class="page-title">Verbs to use — and to avoid</h1>
+          <p class="lede">
+            Functional requirements are verbs. The right verb describes a concrete behavior; the wrong one waves at a vague intention. Picking from a known good list is one of the easiest upgrades you can make to your writing.
+          </p>
+
+          <h2 class="section-h">Use these</h2>
+          <p>Verbs that describe specific, observable system behavior. You can build them, test them, and tick them off.</p>
+          <div class="verb-grid">
+            <div class="verb-chip">Access</div><div class="verb-chip">Audit</div><div class="verb-chip">Authenticate</div><div class="verb-chip">Authorize</div><div class="verb-chip">Backup</div><div class="verb-chip">Calculate</div><div class="verb-chip">Complete</div><div class="verb-chip">Control</div><div class="verb-chip">Count</div><div class="verb-chip">Create</div><div class="verb-chip">Disable</div><div class="verb-chip">Display</div><div class="verb-chip">Delete</div><div class="verb-chip">Edit</div><div class="verb-chip">Enable</div><div class="verb-chip">Erase</div><div class="verb-chip">Identify</div><div class="verb-chip">Input</div><div class="verb-chip">Link</div><div class="verb-chip">List</div><div class="verb-chip">Log</div><div class="verb-chip">Login</div><div class="verb-chip">Look up</div><div class="verb-chip">Modify</div><div class="verb-chip">Notify</div><div class="verb-chip">Output</div><div class="verb-chip">Print</div><div class="verb-chip">Populate</div><div class="verb-chip">Prompt</div><div class="verb-chip">Provide</div><div class="verb-chip">Query</div><div class="verb-chip">Read</div><div class="verb-chip">Report</div><div class="verb-chip">Restore</div><div class="verb-chip">Retrieve</div><div class="verb-chip">Save</div><div class="verb-chip">Search</div><div class="verb-chip">Sort</div><div class="verb-chip">Store</div><div class="verb-chip">Transmit</div><div class="verb-chip">Transfer</div><div class="verb-chip">Update</div><div class="verb-chip">Verify</div><div class="verb-chip">Validate</div><div class="verb-chip">Write</div>
+          </div>
+
+          <h2 class="section-h">Avoid these</h2>
+          <p>Each of these hides a real verb. Force yourself to be specific.</p>
+          <div class="verb-grid">
+            <div class="verb-chip avoid">Automate</div><div class="verb-chip avoid">Process</div><div class="verb-chip avoid">Manage</div><div class="verb-chip avoid">Track</div><div class="verb-chip avoid">Enhance</div>
+          </div>
+
+          <h2 class="section-h">Why they're traps</h2>
+
+          <div class="accordion open">
+            <button class="accordion-head" aria-expanded="true"><span>'Manage'</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>"Manage users" could mean create, edit, delete, deactivate, audit, export — any combination. Pick the actual verbs you need. "The admin can <strong>create</strong>, <strong>edit</strong>, and <strong>deactivate</strong> user accounts" is testable; "manage users" is not.</p></div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-head" aria-expanded="false"><span>'Process'</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>What does processing mean? Read it? Validate it? Transform it? Write it somewhere? Each of those is a different requirement.</p></div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-head" aria-expanded="false"><span>'Track'</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>Tracking implies capture + store + display + maybe alert. Spell out which of those the system actually does.</p></div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-head" aria-expanded="false"><span>'Automate' and 'Enhance'</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>Both are verbs of intention, not behavior. They describe what we hope the system feels like, not what it does. Strip them out and name the actual behaviors underneath.</p></div>
+          </div>
+
+          <div class="compare">
+            <div class="card bad">
+              <span class="label">Before</span>
+              <div class="body"><em>The system shall manage customer information.</em></div>
+            </div>
+            <div class="card good">
+              <span class="label">After</span>
+              <div class="body"><em>The system shall <strong>create</strong>, <strong>update</strong>, <strong>retrieve</strong>, and <strong>delete</strong> customer records.</em></div>
+            </div>
+            <div class="reason"><strong>Why it's better:</strong> The 'after' tells engineering exactly what to build, and tells QA exactly what to test. The 'before' tells nobody anything.</div>
+          </div>
+        </section>
+
+        <!-- ============ ANATOMY ============ -->
+        <section class="page" id="page-anatomy" data-id="anatomy">
+          <div class="eyebrow">Foundation</div>
+          <h1 class="page-title">Anatomy of a user story</h1>
+          <p class="lede">
+            A user story is a short, simple description of a feature from the perspective of the person who'll use it. The whole point is to make the value to that person impossible to miss.
+          </p>
+
+          <h2 class="section-h">The template</h2>
+          <p>Every story you write should fit into this shape:</p>
+
+          <div class="story-template">
+            <strong>As a</strong> <span class="slot">type of user</span>,<br/>
+            <strong>I want</strong> <span class="slot">action they want to take</span>,<br/>
+            <strong>so that</strong> <span class="slot">benefit they get</span>.
+          </div>
+
+          <p>The three slots aren't decoration — each one prevents a specific failure mode:</p>
+          <ul>
+            <li><strong>"As a…"</strong> stops you from designing for "the user" in the abstract. There's always a specific persona.</li>
+            <li><strong>"I want…"</strong> forces you to name a concrete action, not a feature or a screen.</li>
+            <li><strong>"So that…"</strong> is the value statement. If you can't finish this clause, you don't have a story yet.</li>
+          </ul>
+
+          <h2 class="section-h">A real one</h2>
+          <div class="story-template">
+            <strong>As a</strong> <span class="slot">customer</span>,<br/>
+            <strong>I want</strong> <span class="slot">to filter products by price</span>,<br/>
+            <strong>so that</strong> <span class="slot">I can find items within my budget</span>.
+          </div>
+
+          <p>Notice how short that is. A good story is a sentence, not a page. Anything else — the design, the edge cases, the technical approach — belongs in conversations, comments, and acceptance criteria.</p>
+
+          <h2 class="section-h">More good examples</h2>
+          <p>The personas can be named individuals or roles — both work, as long as the persona is specific enough to picture:</p>
+
+          <ul>
+            <li><em>As Max, I want to invite my friends, so we can enjoy this service together.</em></li>
+            <li><em>As Sascha, I want to organize my work, so I can feel more in control.</em></li>
+            <li><em>As a manager, I want to understand my colleagues' progress, so I can report our success and failures.</em></li>
+          </ul>
+
+          <blockquote class="pull">
+            Features should support the user — by using functionality to do tasks and achieve goals. Not the other way around.
+          </blockquote>
+        </section>
+
+        <!-- ============ LIFECYCLE ============ -->
+        <section class="page" id="page-lifecycle" data-id="lifecycle">
+          <div class="eyebrow">Foundation</div>
+          <h1 class="page-title">The life of a story</h1>
+          <p class="lede">Stories don't live on a single person's desk. They move through hands. Knowing who picks them up at each step — and what they're checking for — saves a lot of awkward teams messages later.</p>
+
+          <div class="lifecycle">
+            <div class="lifecycle-step"><div class="num">1</div><div class="what"><div class="title">Story is written</div><div class="who">Product Owner, Business Analyst</div></div></div>
+            <div class="lifecycle-step"><div class="num">2</div><div class="what"><div class="title">High-level acceptance criteria drafted</div><div class="who">QA, Business Analyst</div></div></div>
+            <div class="lifecycle-step"><div class="num">3</div><div class="what"><div class="title">Business value articulated</div><div class="who">Business Requestor</div></div></div>
+            <div class="lifecycle-step"><div class="num">4</div><div class="what"><div class="title">Story is estimated</div><div class="who">Scrum team</div></div></div>
+            <div class="lifecycle-step"><div class="num">5</div><div class="what"><div class="title">Story is prioritized on the backlog</div><div class="who">Product Manager</div></div></div>
+            <div class="lifecycle-step"><div class="num">6</div><div class="what"><div class="title">Story is pulled into an iteration</div><div class="who">Scrum Master</div></div></div>
+            <div class="lifecycle-step"><div class="num">7</div><div class="what"><div class="title">Tasks are created and defined</div><div class="who">Scrum team</div></div></div>
+            <div class="lifecycle-step"><div class="num">8</div><div class="what"><div class="title">Feature is developed and tested</div><div class="who">Scrum team</div></div></div>
+            <div class="lifecycle-step"><div class="num">9</div><div class="what"><div class="title">Story is accepted</div><div class="who">PO, BA, Business Requestor</div></div></div>
+          </div>
+
+          <div class="callout">
+            <div class="callout-title">Tip</div>
+            <div>You don't have to drive every step. You <em>do</em> need to know who does, and what state the story should be in when it lands on their plate. If you don't know who owns the next step, that's your real bottleneck.</div>
+          </div>
+
+          <h2 class="section-h">Where new analysts get stuck</h2>
+
+          <div class="accordion open">
+            <button class="accordion-head" aria-expanded="true"><span>&ldquo;My story keeps getting bounced back at refinement.&rdquo;</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>Almost always one of three things: the value is fuzzy ("so that we improve the experience"), the scope is too big, or there are no acceptance criteria. Check those three before you re-submit.</p></div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-head" aria-expanded="false"><span>&ldquo;I wrote it, but I don't know if it's ready for estimation.&rdquo;</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>If a developer could read it without you in the room and form a reasonable opinion about scope, it's ready. If they'd need to ask three clarifying questions just to size it, it isn't.</p></div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-head" aria-expanded="false"><span>&ldquo;Who actually owns acceptance?&rdquo;</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>Acceptance is shared. The PO confirms it matches what they asked for. The BA confirms it matches the documented requirements. The business requestor confirms it actually solves their problem. All three matter.</p></div>
+          </div>
+        </section>
+
+        <!-- ============ TIPS ============ -->
+        <section class="page" id="page-tips" data-id="tips">
+          <div class="eyebrow">Writing</div>
+          <h1 class="page-title">Writing tips</h1>
+          <p class="lede">
+            The mechanics of a good story are mostly about restraint. Say less. Be specific. Leave room for conversation. Here are the seven moves that separate a story that ships from one that stalls.
+          </p>
+
+          <h2 class="section-h">1. Use the template</h2>
+          <p>You will be tempted to drop "As a… I want… so that…" once you're experienced. Don't. The template's job is to force the value statement, and that pressure is exactly what makes stories good.</p>
+
+          <div class="compare">
+            <div class="card bad"><span class="label">Before</span><div class="body"><em>Add price filter to product listing page.</em></div></div>
+            <div class="card good"><span class="label">After</span><div class="body"><em>As a <em class="tag-user">customer</em>, I want to filter products by price, so that I can find items within my budget.</em></div></div>
+            <div class="reason"><strong>Why it's better:</strong> The 'before' is a task. The 'after' is a story — it names who benefits and why.</div>
+          </div>
+
+          <h2 class="section-h">2. Focus on the user, not the feature</h2>
+          <p>The unit of value is "a thing a real person can do," not "a thing the engineering team can build."</p>
+
+          <div class="compare">
+            <div class="card bad"><span class="label">Before</span><div class="body"><em>As a user, I want a dropdown for country selection.</em></div></div>
+            <div class="card good"><span class="label">After</span><div class="body"><em>As a <em class="tag-user">first-time shopper</em>, I want to set my country so prices and shipping show in terms I recognize.</em></div></div>
+            <div class="reason"><strong>Why it's better:</strong> A dropdown is one possible solution. The real story is the underlying need — and there might be a better way to meet it.</div>
+          </div>
+
+          <h2 class="section-h">3. Keep it simple and concise</h2>
+          <p>Plain language. No technical jargon. If you're tempted to write a second paragraph, you probably have a second story.</p>
+
+          <div class="compare">
+            <div class="card bad"><span class="label">Before</span><div class="body"><em>As a user, I want to leverage our enhanced authentication paradigm via OAuth 2.0 with PKCE to securely federate identity across our ecosystem.</em></div></div>
+            <div class="card good"><span class="label">After</span><div class="body"><em>As a <em class="tag-user">returning customer</em>, I want to sign in with Google, so I don't have to remember another password.</em></div></div>
+            <div class="reason"><strong>Why it's better:</strong> Same underlying work. The 'after' actually tells you why we're doing it.</div>
+          </div>
+
+          <h2 class="section-h">4. Always name the benefit</h2>
+          <p>"So that…" is the most important part of the sentence. If you can only write "so that the user can do X" without saying why X matters, the story isn't ready.</p>
+
+          <div class="compare">
+            <div class="card bad"><span class="label">Before</span><div class="body"><em>As a user, I want to receive email notifications, so that I get email notifications.</em></div></div>
+            <div class="card good"><span class="label">After</span><div class="body"><em>As a <em class="tag-user">project manager</em>, I want to be notified when a teammate finishes a task, so I can hand off the next piece of work without checking the board.</em></div></div>
+            <div class="reason"><strong>Why it's better:</strong> The 'after' tells you the real job. Now a developer can suggest in-app or SMS as alternatives — and the story still makes sense.</div>
+          </div>
+
+          <h2 class="section-h">5. Include acceptance criteria</h2>
+          <p>The story sets the direction. Acceptance criteria make it testable. We give them their own section — see <strong>Acceptance criteria</strong>.</p>
+
+          <h2 class="section-h">6. Prioritize honestly</h2>
+          <p>Rank stories by importance and urgency. Use frameworks where they help — Weighted Shortest Job First, business value, dependency order — but the goal is just: <em>which thing pays off most for the least work, soonest?</em></p>
+
+          <h2 class="section-h">7. Collaborate, document, align</h2>
+          <p>A story written alone in a doc is a draft. A story that's been talked through with users, the PO, engineering, and QA, and where everyone has agreed in writing — that's ready. Document who weighed in, and make sure impacted stakeholders explicitly signed off.</p>
+
+          <div class="callout">
+            <div class="callout-title">The two-minute rule</div>
+            <div>If you can't read your story out loud in under two minutes and have a developer nod, simplify or split it. Length is almost always a smell.</div>
+          </div>
+        </section>
+
+        <!-- ============ INVEST ============ -->
+        <section class="page" id="page-invest" data-id="invest">
+          <div class="eyebrow">Writing</div>
+          <h1 class="page-title">The INVEST check</h1>
+          <p class="lede">
+            INVEST is a six-letter sanity check for any story you're about to push into refinement. Tap each one to mark it done — your progress is saved in this browser, so you can come back to it.
+          </p>
+
+          <div id="invest-root"></div>
+
+          <div class="callout">
+            <div class="callout-title">When to use it</div>
+            <div>Run INVEST right before a story goes into a refinement or sprint planning meeting. If any letter fails, the story isn't ready — fix it before it eats team time.</div>
+          </div>
+
+          <h2 class="section-h">When a letter fails</h2>
+
+          <div class="accordion open">
+            <button class="accordion-head" aria-expanded="true"><span>Failing 'I' — the story depends on another story</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>Either combine them, sequence them explicitly on the board, or rewrite the dependency away. Dependent stories sandbag your sprints.</p></div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-head" aria-expanded="false"><span>Failing 'N' — the story is locked-down spec</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>Strip out implementation detail. "Use a modal dialog" becomes "let the user confirm before deleting." Leave the <em>how</em> to design and engineering.</p></div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-head" aria-expanded="false"><span>Failing 'V' — there's no clear value</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>Ask: who is measurably better off when this ships? If the answer is "the team" or "the codebase," it's a tech-debt task, not a user story. Track it elsewhere.</p></div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-head" aria-expanded="false"><span>Failing 'E' — the team can't estimate</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>It's almost always missing context. Walk through it with a developer; their questions are your gaps. Or split it — see the next section.</p></div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-head" aria-expanded="false"><span>Failing 'S' — the story is too big</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>This is the most common one. See <strong>Splitting &amp; mapping</strong> for techniques. As a rule of thumb: if you can't ship it in a sprint, you're going to split it eventually — better now than mid-sprint.</p></div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-head" aria-expanded="false"><span>Failing 'T' — you can't tell when it's done</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>Write acceptance criteria. If you can't write them, the story is too vague. Go back to the persona and the "so that" — they're hiding the testable bit.</p></div>
+          </div>
+        </section>
+
+        <!-- ============ AC ============ -->
+        <section class="page" id="page-ac" data-id="ac">
+          <div class="eyebrow">Writing</div>
+          <h1 class="page-title">Acceptance criteria</h1>
+          <p class="lede">
+            Acceptance criteria are the conditions that have to be true for the story to be considered done. They turn "I think this is finished" into "we agreed this is finished" — and they're how QA writes tests without guessing.
+          </p>
+
+          <h2 class="section-h">Three rules</h2>
+
+          <ol>
+            <li><strong>State the intent, not the solution.</strong> "The user can choose a course" beats "the user can select a course from a dropdown." The dropdown is a design decision; the choice is the requirement.</li>
+            <li><strong>Stay relatively high level.</strong> Not every detail belongs in writing. Cover the five Ws — who, what, when, where, why — and let the rest live in conversation.</li>
+            <li><strong>Be implementation-agnostic.</strong> The statement should hold whether the feature ends up on web, mobile, or desktop.</li>
+          </ol>
+
+          <h2 class="section-h">The Given / When / Then format</h2>
+          <p>The most common format. It reads naturally and maps cleanly to automated tests:</p>
+
+          <div class="story-template" style="font-size: 18px; line-height: 1.7;">
+            <strong>Given</strong> <span class="slot">some starting context</span>,<br />
+            <strong>when</strong> <span class="slot">the user does this thing</span>,<br />
+            <strong>then</strong> <span class="slot">this outcome should happen</span>.
+          </div>
+
+          <h2 class="section-h">A worked example</h2>
+          <p>Take the story we keep coming back to:</p>
+
+          <div class="story-template">
+            <strong>As a</strong> <span class="slot">customer</span>,<br/>
+            <strong>I want</strong> <span class="slot">to filter products by price</span>,<br/>
+            <strong>so that</strong> <span class="slot">I can find items within my budget</span>.
+          </div>
+
+          <p>Good acceptance criteria for that story:</p>
+          <ul>
+            <li><em>Given</em> I am on the product page, <em>when</em> I select a price range, <em>then</em> I should see only products within that range.</li>
+            <li><em>Given</em> I am on the product page, <em>when</em> I reset the filter, <em>then</em> I should see all products.</li>
+          </ul>
+
+          <h2 class="section-h">Before and after</h2>
+
+          <div class="compare">
+            <div class="card bad"><span class="label">Before</span><div class="body"><em>The filter should work properly.</em></div></div>
+            <div class="card good"><span class="label">After</span><div class="body"><em>Given I am on the product page, when I select the $0–$50 range, then only products priced $0–$50 inclusive should be visible.</em></div></div>
+            <div class="reason"><strong>Why it's better:</strong> 'Works properly' isn't testable. The 'after' is a concrete check QA can write tomorrow.</div>
+          </div>
+
+          <div class="compare">
+            <div class="card bad"><span class="label">Before</span><div class="body"><em>User can select a course from a dropdown menu.</em></div></div>
+            <div class="card good"><span class="label">After</span><div class="body"><em>The user can choose a course.</em></div></div>
+            <div class="reason"><strong>Why it's better:</strong> The original baked in the UI. The rewrite lets design make that call — and stays true whether we ship a dropdown, a search, or autocomplete.</div>
+          </div>
+        </section>
+
+        <!-- ============ SPLITTING ============ -->
+        <section class="page" id="page-splitting" data-id="splitting">
+          <div class="eyebrow">Refining</div>
+          <h1 class="page-title">Splitting &amp; story mapping</h1>
+          <p class="lede">
+            The two most useful refinement techniques: zooming out to see the whole user journey, and zooming in to break a too-big story into shippable pieces.
+          </p>
+
+          <h2 class="section-h">Story mapping</h2>
+          <p>Lay out the user journey end-to-end, then map stories onto each step. The big wins:</p>
+          <ul>
+            <li>You see the gaps — places in the journey that nobody has written a story for.</li>
+            <li>You see the order — which stories block which other stories.</li>
+            <li>You see the minimum slice — what's the smallest version of this journey that's still usable?</li>
+          </ul>
+          <p>To achieve their goals, users perform <strong>activities</strong>, which are made of <strong>tasks</strong>. Story mapping keeps you on the user's verbs, not the software's nouns.</p>
+
+          <h2 class="section-h">Splitting large stories</h2>
+          <p>If a story can't be finished in a sprint, split it. The trick is splitting along value lines, not technical layers.</p>
+
+          <div class="compare">
+            <div class="card bad">
+              <span class="label">Before</span>
+              <div class="body">
+                <ul style="margin: 0; padding-left: 18px;">
+                  <li>Build database schema</li>
+                  <li>Build API endpoint</li>
+                  <li>Build UI</li>
+                </ul>
+              </div>
+            </div>
+            <div class="card good">
+              <span class="label">After</span>
+              <div class="body">
+                <ul style="margin: 0; padding-left: 18px;">
+                  <li>As a shopper, I can filter by price range</li>
+                  <li>As a shopper, I can filter by brand</li>
+                  <li>As a shopper, I can combine filters</li>
+                </ul>
+              </div>
+            </div>
+            <div class="reason"><strong>Why it's better:</strong> Splitting by technical layer means nothing ships until all three are done. Splitting by user-facing value means each piece is independently demoable.</div>
+          </div>
+
+          <h2 class="section-h">Use real examples</h2>
+          <p>Pin a real-world scenario to the story — a specific customer, a specific purchase, a specific journey. It anchors the conversation in something everyone can picture and exposes edge cases the abstract version hid.</p>
+
+          <div class="callout">
+            <div class="callout-title">Heuristic</div>
+            <div>If a story takes longer than 15 minutes to walk through at refinement, split it. If it takes 30 seconds, it's probably right.</div>
+          </div>
+        </section>
+
+        <!-- ============ QUESTIONS ============ -->
+        <section class="page" id="page-questions" data-id="questions">
+          <div class="eyebrow">Refining</div>
+          <h1 class="page-title">Finding hidden stories</h1>
+          <p class="lede">
+            Most of the stories you'll miss aren't hard — they're just things you didn't think to ask about. These six prompts surface them. Run through them every time you finish a first draft of a feature.
+          </p>
+
+          <div class="prompts">
+            <div class="prompt">What will users most likely want to do <strong>next</strong>?</div>
+            <div class="prompt">What <strong>mistakes</strong> could a user make here?</div>
+            <div class="prompt">What happens in the event of an <strong>error</strong>?</div>
+            <div class="prompt">What could <strong>confuse</strong> a user at this point?</div>
+            <div class="prompt">What other <strong>information</strong> would a user want — or could use?</div>
+            <div class="prompt">How will I <strong>demo</strong> this story?</div>
+          </div>
+
+          <div class="callout">
+            <div class="callout-title">Why 'how will I demo it' matters</div>
+            <div>Asking how you'd demo the story forces you to picture the finished thing. If you can't picture a believable demo in 60 seconds, the story is too vague or too big.</div>
+          </div>
+
+          <h2 class="section-h">Other strategies for keeping stories sharp</h2>
+
+          <div class="accordion open">
+            <button class="accordion-head" aria-expanded="true"><span>Regular refinement</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>Stories rot. Continuously review and refine them with the team so they stay relevant and clear. Reality changes between when you write a story and when it ships — let the story keep up.</p></div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-head" aria-expanded="false"><span>Backlog grooming</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>Regularly update the backlog to re-rank and refine stories based on new feedback and changing priorities. A long-untouched backlog is almost always wrong.</p></div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-head" aria-expanded="false"><span>Feedback loops</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>Get the work in front of real users as fast as you reasonably can. Then turn what they say back into new stories. The feedback loop is the actual product process; everything else is plumbing.</p></div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-head" aria-expanded="false"><span>Cross-functional collaboration</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>Bring development, design, QA, and whoever else into story creation. Every function spots a different category of gap. Solo-authored stories almost always have blind spots.</p></div>
+          </div>
+          <div class="accordion">
+            <button class="accordion-head" aria-expanded="false"><span>Use the right tools</span><svg class="accordion-caret" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></button>
+            <div class="accordion-body"><p>Jira, Adonis, and Miro help with organization, collaboration, and tracking — and they bake in process flow. Pick the one your team will actually keep up to date. A pristine tool nobody uses is worse than a messy one everyone does.</p></div>
+          </div>
+        </section>
+
+        <!-- ============ GLOSSARY ============ -->
+        <section class="page" id="page-glossary" data-id="glossary">
+          <div class="eyebrow">Reference</div>
+          <h1 class="page-title">Glossary</h1>
+          <p class="lede">
+            The terms used in this handbook, defined in plain language. Keep this page open in a tab during your first few weeks.
+          </p>
+          <dl>
+            <div class="def"><dt>User Story</dt><dd>A short description of a feature from the user's perspective, in the form: As a [user], I want [action], so that [benefit].</dd></div>
+            <div class="def"><dt>Acceptance Criteria</dt><dd>The specific, testable conditions that must be true for a story to be considered done.</dd></div>
+            <div class="def"><dt>INVEST</dt><dd>A six-letter check for story quality: Independent, Negotiable, Valuable, Estimable, Small, Testable.</dd></div>
+            <div class="def"><dt>SMART</dt><dd>A five-letter check for individual requirements: Specific, Measurable, Achievable, Realistic, Traceable.</dd></div>
+            <div class="def"><dt>Backlog</dt><dd>The ordered list of all the work the team could do — stories, bugs, tasks — ranked by priority.</dd></div>
+            <div class="def"><dt>Backlog grooming</dt><dd>Regular work on the backlog to keep it ranked, refined, and relevant. Also called backlog refinement.</dd></div>
+            <div class="def"><dt>Refinement</dt><dd>The session where the team reviews upcoming stories, asks clarifying questions, and makes sure they're ready for sprint planning.</dd></div>
+            <div class="def"><dt>Story mapping</dt><dd>A technique for laying out user journeys end-to-end so you can see gaps, order, and the smallest usable slice.</dd></div>
+            <div class="def"><dt>Persona</dt><dd>A specific imagined user — named or role-based — used to ground a story in someone real.</dd></div>
+            <div class="def"><dt>Functional requirement</dt><dd>Something the system does — a behavior, action, or operation.</dd></div>
+            <div class="def"><dt>Non-functional requirement</dt><dd>A quality the system must have — performance, security, reliability, accessibility. Also called supplementary or quality requirements.</dd></div>
+            <div class="def"><dt>Business case</dt><dd>The written justification for a project, used to get a go/no-go decision from leadership.</dd></div>
+            <div class="def"><dt>Given/When/Then</dt><dd>A format for acceptance criteria: starting context, user action, expected outcome.</dd></div>
+            <div class="def"><dt>WSJF</dt><dd>Weighted Shortest Job First — a prioritization method that ranks work by value divided by effort.</dd></div>
+            <div class="def"><dt>PO / BA / QA</dt><dd>Product Owner, Business Analyst, Quality Assurance. The three roles most often involved in shaping and accepting a story.</dd></div>
+          </dl>
+        </section>
+
+        <div class="page-nav" id="page-nav"></div>
+
+      </main>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
